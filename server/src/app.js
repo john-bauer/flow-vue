@@ -1,10 +1,10 @@
 const express = require('express')
-
+const config = require('./config/config')
 const app = express()
 
-app.listen(8080)
+app.listen(config.port)
 
-app.use('/', (req, res) =>{
-  res.send('hello')
+app.use('/', (req, res) => {
+  res.send('hello express')
 })
-console.log('app running on 8080')
+console.log(`app running on ${config.port}`)
